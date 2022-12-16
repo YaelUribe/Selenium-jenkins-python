@@ -1,0 +1,7 @@
+echo "Please select environment:"
+select answer in "development" "staging"; do
+    case $answer in
+        development ) pytest -v --alluredir=./reports/Web/development/allure-results ./tests_web/development/*.py; break;;
+        staging ) pytest -v --alluredir=./reports/Web/staging/allure-results ./tests_web/staging/*.py; break;;
+    esac
+done
